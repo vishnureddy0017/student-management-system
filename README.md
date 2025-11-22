@@ -1,112 +1,149 @@
-# student-management-system — Spring Boot + MySQL
+# Student Management System – Java Spring Boot + MySQL
 
-A complete Student Management backend application built using Java, Spring Boot, Spring Data JPA, and MySQL.
-It provides REST APIs to manage student data with proper validation, mapping, exception handling, and SQL database integration.
+A complete backend application built using **Java**, **Spring Boot**, **Spring Data JPA**, and **MySQL**.  
+This project provides REST APIs for performing CRUD operations on student records, along with validation, DTO mapping, global exception handling, and SQL database integration.
 
-🚀 Features
+---
 
-Create, update, delete, and fetch student records
+## 🚀 Features
+- Add, update, delete, and fetch student records  
+- MySQL database integration with JPA  
+- REST API using Spring Web  
+- DTO and Entity mapping  
+- Validation using Jakarta Validation  
+- Global Exception Handling  
+- Swagger API Documentation  
+- Docker & Docker Compose support  
+- Clean production-ready code structure  
 
-MySQL database integration
+---
 
-Validation using Jakarta Validation
+## 🛠 Tech Stack
+**Language:** Java 17  
+**Framework:** Spring Boot 3  
+**Database:** MySQL  
+**ORM:** Spring Data JPA  
+**Build Tool:** Maven  
+**Documentation:** Swagger (OpenAPI)  
+**Containerization:** Docker / Docker Compose  
 
-REST APIs using Spring Boot
+---
 
-DTO → Entity mapping
-
-Global exception handling
-
-Docker support (App + MySQL)
-
-Swagger UI documentation
-
-Production-ready folder structure
-
-🛠️ Tech Stack
-
-Backend: Java 17, Spring Boot 3
-Database: MySQL
-ORM: Spring Data JPA
-Build Tool: Maven
-Containerization: Docker & Docker Compose
-Documentation: OpenAPI/Swagger
-
-📂 Project Structure
+## 📁 Project Structure
+```
 src/main/java/com/vishnureddy/student/
- ├── controller/      # REST API layer
+ ├── controller/      # API endpoints
  ├── service/         # Business logic
  ├── repository/      # JPA repository
- ├── model/           # Entity classes
- ├── dto/             # Data transfer objects
- ├── mapper/          # Entity <-> DTO converters
+ ├── model/           # Entity class (Student)
+ ├── dto/             # Data Transfer Objects
+ ├── mapper/          # Entity ↔ DTO mapper
  ├── exception/       # Global exception handler
  └── StudentManagementApplication.java
+```
 
-⚙️ How to Run the Project
-1. Clone the repository
-git clone https://github.com/yourusername/student-management-system.git
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the Repository
+```
+git clone https://github.com/your-username/student-management-system.git
 cd student-management-system
+```
 
-2. Configure MySQL
-
-Create database in MySQL:
-
+### 2️⃣ Create MySQL Database
+Open MySQL and run:
+```sql
 CREATE DATABASE studentdb;
+```
 
+### 3️⃣ Configure Database
+Update your credentials in:
 
-Update username & password in:
-
+```
 src/main/resources/application.yml
+```
 
-3. Run using Maven
+Example:
+```yaml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/studentdb
+    username: root
+    password: yourpassword
+```
+
+### 4️⃣ Run the Application
+```
 mvn spring-boot:run
+```
 
-🐳 Run with Docker (Optional)
+---
 
-Start MySQL + App using Docker Compose:
-
+## 🐳 Run with Docker (Optional)
+Start both MySQL + Spring Boot app using Docker Compose:
+```
 docker compose up --build
+```
 
-📘 API Documentation (Swagger)
+---
 
-Once the application is running, open:
+## 📌 API Endpoints
 
-👉 http://localhost:8080/swagger-ui/index.html
+### ➤ Create Student  
+`POST /api/students`
 
-You will see all Student API endpoints.
+### ➤ Get All Students  
+`GET /api/students`
 
-📡 API Endpoints
-POST /api/students
+### ➤ Get Student by ID  
+`GET /api/students/{id}`
 
-Create new student
+### ➤ Update Student  
+`PUT /api/students/{id}`
 
-GET /api/students
+### ➤ Delete Student  
+`DELETE /api/students/{id}`
 
-Get all students
+---
 
-GET /api/students/{id}
-
-Get student by ID
-
-PUT /api/students/{id}
-
-Update student
-
-DELETE /api/students/{id}
-
-Delete student
-
-📦 Sample JSON
+## 📝 Sample Request Body
+```json
 {
   "firstName": "Vishnu",
   "lastName": "Reddy",
-  "email": "vishnu.example@gmail.com",
-  "dob": "2002-05-12",
+  "email": "vishnu@example.com",
+  "dob": "2002-06-15",
   "enrollmentNumber": "ENR2025001",
   "course": "CSE",
   "yearOfStudy": 4
 }
+```
 
-🧪 Running Tests
+---
+
+## 📘 Swagger API Documentation
+Once the app is running, visit:
+
+👉 http://localhost:8080/swagger-ui/index.html
+
+---
+
+## 🧪 Running Tests
+```
 mvn test
+```
+
+---
+
+## 👨‍💻 Author
+**Bontha Vishnu Vardhan Reddy**  
+Backend Developer (Java | Spring Boot | SQL)
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
+
+
