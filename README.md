@@ -135,15 +135,6 @@ Once the app is running, visit:
 mvn test
 ```
 
----
 
-## 👨‍💻 Author
-**Bontha Vishnu Vardhan Reddy**  
-Backend Developer (Java | Spring Boot | SQL)
-
----
-
-## 📄 License
-This project is licensed under the MIT License.
 
 
